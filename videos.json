@@ -1,0 +1,62 @@
+[
+    {
+        "index": 1,
+        "id": "twpp1s7f7r",
+        "title": "Kontakt",
+        "description": "Ako na kontakt...",
+        "thumbUrl": "thumbnails/video1-thumb.jpg",
+        "download": {
+            "downloadUrl": "https://kajabi-storefronts-production.s3.amazonaws.com/posts/2157750395/downloads/5CTGBSJQ2KF38MHp33KK_Karta_pla_novania_vzor.numbers.zip?response-content-disposition=attachment%3B%20filename%3DKarta_pla_novania_vzor.numbers.zip&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI4TIKYMSB4PQMFBA%2F20230506%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230506T135936Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=29b29970d7f214455ed313e994b7c752c02669abd7e58ca4f8d54e6f0fa903f5",
+            "fileTitle": "Karta plánovania"
+        },
+        "captions": ""
+    },
+    {
+        "index": 2,
+        "id": "",
+        "title": "Kontakt argumenty",
+        "description": "Námietky pri kontaktovaní...",
+        "thumbUrl": "thumbnails/video2-thumb.jpg",
+        "download": {
+            "downloadUrl": "",
+            "fileTitle": ""
+        },
+        "captions": ""
+    },
+    {
+        "index": 3,
+        "id": "",
+        "title": "Dôvera",
+        "description": "Dôvera na prezentácii...",
+        "thumbUrl": "thumbnails/video3-thumb.jpg",
+        "download": {
+            "downloadUrl": "",
+            "fileTitle": ""
+        },
+        "captions": ""
+    },
+    {
+        "index": 4,
+        "id": "",
+        "title": "Pozvanie na webinár",
+        "description": "Pozvanie na webinár je kurz, ktorý Vám ukáže, ako zaregistrovať človeka do spolupráce",
+        "thumbUrl": "thumbnails/video4-thumb.jpg",
+        "download": {
+            "downloadUrl": "https://kajabi-storefronts-production.s3.amazonaws.com/file-uploads/posts/2159865423/downloads/7431828-20f2-1d3-67fc-c835ba656fde_PozvanieNaSeminar.key?response-content-disposition=attachment%3B%20filename%3DPozvanieNaSeminar.key&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI4TIKYMSB4PQMFBA%2F20230506%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230506T144412Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=f944bb6cc180a23f7b25e218c347c874caf6115c004a75ebf0e2e4d3fab24e20",
+            "fileTitle": "Pozvanie na seminár prezentácia"
+        },
+        "captions": ""
+    },
+    {
+        "index": 5,
+        "id": "",
+        "title": "Pozvanie na seminár argumenty",
+        "description": "Argumentácia pri pozvaní na seminár...",
+        "thumbUrl": "thumbnails/video5-thumb.jpg",
+        "download": {
+            "downloadUrl": "",
+            "fileTitle": ""
+        },
+        "captions": ""
+    }
+]

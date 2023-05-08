@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Online Kurzy</title>
+    <link rel="icon" href="favicon.jpeg">
+    <link rel="stylesheet" href="video-style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic|Montserrat:400,700,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+  </head>
+  <body>
+    <div id="topline">Online biznis manuál</div>
+    <div class="main-container">
+      <h1 id="video-title"></h1>
+      <p id="description"></p>
+      <div class="container">
+        <div id="wistia-video"></div>
+        <aside>
+          <div id="lectors" class="panel">
+            <h5>Lektori</h5>
+            <div id="names">
+              Linda Pustajová
+              <br />
+              Michal Reisinger
+              <br />
+              David Bajaník
+              <br />
+              Marián Váňa
+              <br />
+              Roman Krkoška
+              <br />
+              Marko Drbúl
+              <br />
+              Jozef Kapičák
+              <br />
+              Juraj Brezina
+              <br />
+              Ondrej Chatrnúch
+              <br />
+              Vladimír Krč
+              <br />
+              Jozef Kapičák
+            </div>
+          </div>
+          <div id="download" class="panel">
+            <h5>Na stiahnutie...</h5>
+            <a id="download-url">
+              <div id="download-title"></div>
+            </a>
+          </div>
+        </aside>
+      </div>
+    </div>
+    <footer></footer>
+
+    <script>
+      fetch("videos.json")
+        .then((response) => response.json())
+        .then((data) => {
+          displayData(data);
+        })
+        .catch((error) => console.error(error));
+
+      function displayData(data) {
+        const videos = [];
+
+        for (let x of data) {
+          videos.push(x);
+        }
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const index = urlParams.get("index") - 1;
+
+        document.title = videos[index].title
+
+        downloadEl = document.getElementById('download')
+
+        document.getElementById("video-title").innerText = videos[index].title
+        document.getElementById("description").innerText = videos[index].description
+
+        if (videos[index].download.downloadUrl) {
+        document.getElementById("download-url").setAttribute("href", videos[index].download.downloadUrl)
+        document.getElementById("download-title").innerText = videos[index].download.fileTitle
+        } else {
+          downloadEl.remove()
+        }
+
+        window._wq = window._wq || [];
+        _wq.push({
+          id: videos[index].id,
+          options: {
+            autoPlay: false,
+            playerColor: "fab541",
+          },
+          onReady: function (video) {},
+        });
+
+        const wistiaVideo = document.getElementById("wistia-video");
+        wistiaVideo.innerHTML = `<div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_${videos[index].id} videoFoam=true" style="height:100%;position:relative;width:100%"><div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;"><img src="https://fast.wistia.com/embed/medias/${videos[index].id}/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" /></div></div></div></div>`;
+      }
+    </script>
+  </body>
+</html>

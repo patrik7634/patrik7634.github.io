@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Online Kurzy</title>
+    <link rel="stylesheet" href="main-style.css" />
+    <link rel="icon" href="favicon.jpeg">
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic|Montserrat:400,700,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <div id="topline">Online biznis manuál</div>
+    <div class="container">
+        <div id="video-list" class="panel"></div>
+        <aside>
+            <img id="darts" src="darts.jpeg" alt="">
+            <div id="lectors" class="panel">
+                <h3>Lektori</h3>
+                <div id="names">
+                    Linda Pustajová
+                <br>
+                Michal Reisinger
+                <br>
+                David Bajaník
+                <br>
+                Marián Váňa
+                <br>
+                Roman Krkoška
+                <br>
+                Marko Drbúl
+                <br>
+                Jozef Kapičák
+                <br>
+                Juraj Brezina
+                <br>
+                Ondrej Chatrnúch
+                <br>
+                Vladimír Krč
+                <br>
+                Jozef Kapičák
+                </div>
+            </div>
+        </aside>
+    </div>
+    <footer></footer>
+
+    <script>
+      fetch("videos.json")
+        .then((response) => response.json())
+        .then((data) => {
+          displayData(data);
+        })
+        .catch((error) => console.error(error));
+
+      function displayData(data) {
+        const videos = [];
+        
+        for (let x of data) {
+          videos.push(x);
+        }
+
+        const videoList = document.getElementById("video-list");
+
+        videos.forEach((video) => {
+          const sectionTitle = document.createElement("h5");
+          sectionTitle.classList.add("title");
+          sectionTitle.innerText = video.title;
+
+          const link = document.createElement("div");
+          link.classList.add("video-link");
+
+          link.dataset.index = video.index;
+          link.dataset.title = video.title;
+
+          const img = document.createElement("img");
+          img.classList.add("thumbnail")
+          img.src = video.thumbUrl;
+          link.appendChild(img);
+
+          const desc = document.createElement("p");
+          desc.innerText = video.description;
+          link.appendChild(desc);
+
+          videoList.appendChild(sectionTitle);
+          videoList.appendChild(link);
+        });
+
+        document.querySelectorAll(".video-link").forEach((link) => {
+          link.addEventListener("click", function () {
+            const index = this.dataset.index;
+            const videoUrl = `video.html?index=${index}`;
+            window.location.href = videoUrl;
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
